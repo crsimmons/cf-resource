@@ -19,6 +19,7 @@ func main() {
 	command := out.NewCommand(cloudFoundry)
 
 	var request out.Request
+	fmt.Printf("%v", os.Stdin)
 	if err := json.NewDecoder(os.Stdin).Decode(&request); err != nil {
 		fatal("reading request from stdin", err)
 	}
